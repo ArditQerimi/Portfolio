@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= typeof title !='undefined' ? title: 'My Portfolio' %>
+  </title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+  <div class="big-container">
+
+    <header class="header-container">
+      <a href="/" class="logo-img-container">
+        <img class="logo-img" src="/img/logo.jpg" alt="AQ-logo">
+      </a>
+      <ul class="nav-links ">
+        <li><a <% if (page_name==='homepage' ) { %>class="nav-link active" <% } %> href="/" class="nav-link" >Home</a>
+        </li>
+        <li><a <% if (page_name==='about' ) { %>class="nav-link active" <% } %> href="/about" class="nav-link">About</a>
+        </li>
+        <li><a <% if (page_name==='projects' ) { %>class="nav-link active" <% } %> href="/projects"
+              class="nav-link">Projects</a></li>
+        <li><a <% if (page_name==='contact' ) { %>class="nav-link active" <% } %> href="/contact"
+              class="nav-link">Contact</a>
+        </li>
+      </ul>
+
+
+
+      <div class="nav-links-modal-wrapper" onclick="closeNav()">
+
+        <div class="nav-links-modal">
+
+          <ul class="nav-links-of-modal ">
+            <li><a <% if (page_name==='homepage' ) { %>class="nav-link active" <% } %>
+                  href="/" class="nav-link"
+                  >Home</a>
+            </li>
+            <li><a <% if (page_name==='about' ) { %>class="nav-link active" <% } %> href="/about"
+                  class="nav-link">About</a>
+            </li>
+            <li><a <% if (page_name==='projects' ) { %>class="nav-link active" <% } %> href="/projects"
+                  class="nav-link">Projects</a></li>
+            <li><a <% if (page_name==='contact' ) { %>class="nav-link active" <% } %> href="/contact"
+                  class="nav-link">Contact</a>
+            </li>
+            <!-- <li><a href="/" class="nav-link active ">Home</a></li>
+            <li><a href="/about" class="nav-link">About</a></li>
+            <li><a href="/projects" class="nav-link ">Projects</a></li>
+            <li><a href="/contact" class="nav-link ">Contact</a></li> -->
+          </ul>
+          <div class="close-btn" onclick="closeNav()">
+
+            <img
+              src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/40/000000/external-close-web-flaticons-lineal-color-flat-icons-3.png" />
+          </div>
+        </div>
+      </div>
+
+      <div class="menu" onclick="openNav()">
+
+        <img src="https://img.icons8.com/fluency/48/000000/menu--v1.png" />
+      </div>
+
+    </header>
+
+    <main>
+      <%- body -%>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+
+
+
+        <a href="/" class="">
+          <!-- <img class="logo-img-footer" src="/img/logo.jpg" alt="AQ-logo"> -->
+        </a>
+
+        <div class="footer">
+          <ul class="social-icons ">
+            <li><a href="https://www.linkedin.com/in/ardit-qerimi-3112ba1a6/" target="_blank"><img
+                  src="https://img.icons8.com/color/48/000000/linkedin.png" /></a></li>
+            <li><a href="https://www.facebook.com/d1tqerimi" target="_blank"><img
+                  src="https://img.icons8.com/color/48/000000/facebook.png" /></a></li>
+            <li><a href="/instagram" target="_blank"><img
+                  src="https://img.icons8.com/fluency/48/000000/instagram-new.png" /></a></li>
+            <li><a href="/twitter" target="_blank"><img src="https://img.icons8.com/fluency/48/000000/twitter.png" />
+              </a>
+            </li>
+          </ul>
+          <div>
+            Copyright ©2022 All rights reserved
+          </div>
+        </div>
+
+
+
+      </div>
+    </footer>
+
+  </div>
+
+
+  <script src="/js/script.js"></script>
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+    crossorigin=""></script>
+
+</body>
+<script>
+
+
+  // function myFunction() {
+  //   var x = document.getElementsByClassName("nav-links");
+  //   if (x.style.display === "block") {
+  //     x.style.display = "none";
+  //   } else {
+  //     x.style.display = "block";
+  //   }
+  // }
+
+  // const icon = document.querySelector("icon");
+  // icon.addEventListener("click", console.log("click"));
+
+</script>
+
+</html>

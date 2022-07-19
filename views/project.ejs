@@ -1,0 +1,91 @@
+<div class="project-big-container">
+    <div class="project-card-container">
+        <% if (projectbyId!=null) { %>
+
+
+            <div class="card-container">
+
+
+                <div class="card-image-container">
+                    <img class="card-img" src="<%= projectbyId.imageUrl %>" alt="<%= projectbyId.title %>" />
+                </div>
+                <div class="card-description-container">
+                    <h2>
+                        <%=projectbyId.title %>
+                    </h2>
+                    <div class="techs">
+                        <% projectbyId.description.forEach((tech)=> { %>
+                            <div class="tech">
+                                <%= tech %>
+                            </div>
+                            <% }) %>
+                    </div>
+                </div>
+                <div class="git-link">
+                    <img src="https://img.icons8.com/ios-glyphs/30/000000/github.png" />
+                    <a class="source-anchor" href="<%= projectbyId.gitUrl  %>  " target="_blank">
+                        <div class="source-code">Source Code</div>
+                    </a>
+                </div>
+
+            </div>
+
+            <% } %>
+    </div>
+    <div class="project-reviews">
+        <div class="section-warning">
+            THIS SECTION IS NOT COMPLETED YET AND NEEDS SOME IMPROVEMENTS!
+        </div>
+
+
+        <div class="review-title">
+            Project reviews
+        </div>
+
+        <form action="/review" method="post" class="reviews-form-container" id="form">
+            <input class="review-name" type="text" name="name" id="name" placeholder="Name">
+            <textarea class='review-message' name="message" id="message" placeholder="Your Review"></textarea>
+            <button class="submit-review-button" type="submit">Post Review</button>
+        </form>
+
+
+
+    </div>
+
+
+
+</div>
+
+<div class="review-big-container">
+
+    <div>Posted review</div>
+    <div class="review-container">
+        <div class="reviewer-name">Name: Ardit</div>
+        <div class="review">
+            Yeah very nice project!
+        </div>
+    </div>
+    <div class="review-container">
+        <div class="reviewer-name">Name: Diti</div>
+        <div class="review">
+            Very BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD!
+        </div>
+    </div>
+    <% if (review !='undefined' ) { %>
+        <% review.forEach(review=> { %>
+
+
+            <div class="review-container">
+                <div class="reviewer-name">Name: <%= review.name %>
+                </div>
+
+
+                <div class="review">
+                    <%= review.message %>
+                </div>
+
+            </div>
+            <% }) %>
+
+                <% } %>
+</div>
